@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl='https://testingmerntodobackend.onrender.com/'
+const baseUrl='https://testingmerntodobackend.onrender.com'
 
 const getAllToDo=(setToDo)=>{
     axios
@@ -9,6 +9,7 @@ const getAllToDo=(setToDo)=>{
         console.log('data-->',data);
         setToDo(data)
     })
+    .catch((err)=>console.log(err))
 }
 
 const addToDo=(text,setText,setToDo)=>{
