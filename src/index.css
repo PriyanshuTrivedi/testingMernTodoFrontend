@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .container{
-  max-width: 600px;
+  max-width: 750px;
   margin: auto;
   padding: 0 1rem;
 }
@@ -45,17 +45,28 @@ input{
   background-color: black;
   color: white;
   padding: 1.5rem 3rem;
-  border-radius: 5px;
-}
-.icons{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  display: flex;
-  gap: .5rem;
+  border-radius: 10px;
+  height: 50px;
 }
 .icon{
   cursor: pointer;
   font-size: 20px;
+  margin-left: 10px;
+}
+.added_on{
+  font-size: 12px;
+  font-style: italic;
+  display: flex;
+  justify-content: flex-end;
+}
+.data{
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.make_flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
 }

@@ -28,16 +28,18 @@ function App() {
           value={text}
           onChange={(e)=>setText(e.target.value)}
           />
-          <div className="add" onClick={isUpdating?()=>updateToDo(toDoId,text,setToDo,setText,setIsUpdating) : ()=>addToDo(text,setText,setToDo)}>
+          <div className="add" onClick={isUpdating?()=>updateToDo(toDoId,text,setToDo,setText,setIsUpdating,new Date().toLocaleString()) : ()=>addToDo(text,setText,setToDo,new Date().toLocaleString())}>
             {isUpdating?"Update":"Add"}
           </div>
         </div>
         <div className="list">
           {
             toDo.map((item)=>(
-              <ToDo key={item._id} text={item.text}
+              <ToDo key={item._id} 
+              text={item.text}
               updateMode={()=>updateMode(item._id,item.text)}
-              deleteTodo={()=>deleteToDo(item._id,setToDo)}/>
+              deleteTodo={()=>deleteToDo(item._id,setToDo)}
+              time={item.time}/>
             ))
           }
         </div>

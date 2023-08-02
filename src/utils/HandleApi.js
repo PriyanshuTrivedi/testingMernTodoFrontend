@@ -12,9 +12,9 @@ const getAllToDo=(setToDo)=>{
     .catch((err)=>console.log(err))
 }
 
-const addToDo=(text,setText,setToDo)=>{
+const addToDo=(text,setText,setToDo,time)=>{
     axios
-    .post(`${baseUrl}/save`,{text})
+    .post(`${baseUrl}/save`,{text,time})
     .then((data)=>{
         console.log(data);
         setText("")
@@ -23,9 +23,9 @@ const addToDo=(text,setText,setToDo)=>{
     .catch((err)=>console.log(err))
 }
 
-const updateToDo=(toDoId,text,setToDo,setText,setIsUpdating)=>{
+const updateToDo=(toDoId,text,setToDo,setText,setIsUpdating,time)=>{
     axios
-    .post(`${baseUrl}/update`,{_id:toDoId,text})
+    .post(`${baseUrl}/update`,{_id:toDoId,text,time})
     .then((data)=>{
         console.log(data);
         setText("")
